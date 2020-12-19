@@ -1,0 +1,17 @@
+.margin--small{
+    &--top{
+        margin: 2rem 0rem 0rem 2rem ;
+    }
+    &--right{
+        margin-right:2rem ;
+    }
+}
+
+.border{
+    &--small{
+        border-radius: .4rem;
+    }
+    &--extsmall{
+        border-radius: .5rem;
+    }
+}

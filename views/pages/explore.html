@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Workfit</title>
+
+        <link rel="stylesheet" href="./css/style.css" />
+
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200&family=Vesper+Libre:wght@400;500;700;900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="navigation" onclick="myFunction()">
+            <div id="bg-chnage" class="navigation__background" >&nbsp;</div>
+            <input type="checkbox" class="navigation__checkbox" id="navi-toggle">
+            <label for="navi-toggle" class="navigation__button">
+                <svg class="ham hamRotate ham8" viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+                    <path
+                        class="line top"
+                        d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+                    <path
+                        class="line middle"
+                        d="m 30,50 h 40" />
+                    <path
+                        class="line bottom"
+                        d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+                </svg>
+            </label>
+            <div class="navigation__background">&nbsp;</div>
+
+            <nav class="navigation__nav">
+                <!-- <div class="navigation__nav-logo">
+                    <img src="./img/logo.svg" alt="Logo" class="header__logo">
+                </div> -->
+                <ul class="navigation__list">
+                    <li class="navigation__item"><a href="#section-about" class="navigation__link"> About Yoga</a></li>
+                    <li class="navigation__item"><a href="#section-features" class="navigation__link">Home</a></li>
+                    <li class="navigation__item"><a href="#section-tours" class="navigation__link">Explore</a></li>
+                    <li class="navigation__item"><a href="#section-stories" class="navigation__link">  LogIn/Register</a></li>
+                    <!-- <li class="navigation__item"><a href="#section-book" class="navigation__link"><span>05</span> book now</a></li>     -->
+                </ul>
+            </nav>
+
+        </div>
+
+        <header class="header">
+            <div class="header__logo-box">
+                <img src="./img/logo.svg" alt="Logo" class="header__logo">
+            </div>
+        </header>
+
+        <main>
+            <section class="section-explore">
+                
+                 <div class="explore__search">
+                    <input type="text" placeholder="Search People">
+                </div>  
+
+                <div class="hero-section">
+                    <div class="card-grid">
+                        <a class="card" href="#">
+                        <div class="card__background" style="background-color: teal; background-image: url(./img/beginner.svg)"></div>
+                        <div class="card__content">
+                          <p class="card__category">Yoga</p>
+                          <h3 class="card__heading">Beginners</h3>
+                        </div>
+                        </a>
+                        <a class="card" href="#">
+                        <div class="card__background" style="background-color: #A24A64; background-image: url(./img/medium.svg)"></div>
+                        <div class="card__content">
+                          <p class="card__category">Yoga</p>
+                          <h3 class="card__heading">Medium</h3>
+                        </div>
+                        </a>
+                        <a class="card" href="#">
+                        <div class="card__background" style=" background-color: #3282b8; background-image: url(https://cdn.discordapp.com/attachments/507937174579314691/789882683442462740/Adobe_20201219_212131.png)"></div>
+                        <div class="card__content">
+                          <p class="card__category">Yoga</p>
+                          <h3 class="card__heading">Advance</h3>
+                        </div>
+                        </a>
+                        <a class="card" href="#">
+                        <div class="card__background" style="background-image: url(./img/mudras.png);background-color: #fddb3a;"></div>
+                        <div class="card__content">
+                          <p class="card__category">Yoga</p>
+                          <h3 class="card__heading">Mudras</h3>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="explore__background">
+                    <img src="./img/explorebg.svg" alt="">
+                </div>
+            </section>
+        </main> 
+        
+    </body>
+</html>
