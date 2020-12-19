@@ -25,8 +25,7 @@ body {
   /*font-size: 16px;*/
   background-color: #361999;
   line-height: 1.7;
-  color: #ffffff;
-  padding: 3rem; }
+  color: #ffffff; }
 
 .heading-primary--main {
   font-size: 6rem;
@@ -250,7 +249,7 @@ body {
   color: #555353;
   font-size: 3rem;
   margin: auto;
-  margin-top: 4rem; }
+  margin-top: 9rem; }
 
 .profile__container--1, .profile__container--2 {
   display: flex; }
@@ -263,7 +262,7 @@ body {
 
 .profile__image {
   flex: 1;
-  background-color: #C054C6; }
+  background-color: #f39ac7; }
   .profile__image .img {
     margin: auto;
     margin-top: 2.3rem;
@@ -275,7 +274,7 @@ body {
 
 .profile__badges {
   flex: 3;
-  background-color: #C054C6; }
+  background-color: #f3e39a; }
   .profile__badges--text {
     display: flex;
     flex-direction: column; }
@@ -290,7 +289,7 @@ body {
 
 .profile__about {
   flex: 1;
-  background-color: #FFE374; }
+  background-color: #9af3a1; }
   .profile__about--text {
     font-size: 2.5rem;
     width: 90%;
@@ -306,7 +305,7 @@ body {
 
 .profile__videos {
   flex: 3;
-  background-color: #FFE374; }
+  background-color: #9af3e0; }
 
 .container {
   display: flex;
@@ -811,3 +810,113 @@ body {
   100% {
     background-position: left bottom;
     color: #361999; } }
+
+.beginner__container {
+  font-family: 'Vesper libre', sans-serif;
+  text-transform: uppercase;
+  /* Safari 4.0 - 8.0 */
+  /* Standard syntax */
+  /* Safari 4.0 - 8.0 */
+  /* Standard syntax */
+  /* Safari 4.0 - 8.0 */
+  /* Standard syntax */ }
+  .beginner__container * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale; }
+  .beginner__container .container {
+    width: 99%;
+    min-height: 125rem;
+    height: 40rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-left: 8%;
+    margin-top: 10rem; }
+  .beginner__container .beginner__card {
+    background-color: white;
+    width: 25rem;
+    height: 35rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    padding: 0;
+    margin: 25px 0px 0px 0px;
+    -webkit-box-shadow: -20px -20px 0px 0px #3e1daf;
+    box-shadow: -20px -20px 0px 0px #3e1daf;
+    border-radius: 5px;
+    -webkit-animation-name: shadow-show;
+    /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 1.5s;
+    /* Safari 4.0 - 8.0 */
+    animation-name: shadow-show;
+    animation-duration: 1.5s;
+    -webkit-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+    -o-transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+    transition-timing-function: cubic-bezier(0.795, 0, 0.165, 1);
+    /* custom */
+    margin-right: 7rem;
+    margin-top: 5rem;
+    margin-bottom: 1rem; }
+    .beginner__container .beginner__card h3 {
+      color: black;
+      font-size: 2rem;
+      text-align: center;
+      padding-top: 0.5rem; }
+    .beginner__container .beginner__card img {
+      height: 30rem; }
+    .beginner__container .beginner__card button {
+      border: none;
+      outline: none;
+      background-color: #361999;
+      width: 50%;
+      margin: 10px auto;
+      padding: 10px 30px;
+      color: white;
+      margin-bottom: 1.7rem;
+      cursor: pointer; }
+
+@-webkit-keyframes line-show {
+  from {
+    margin: 0px 100px; }
+  to {
+    margin: 0px; } }
+
+@keyframes line-show {
+  from {
+    margin: 0px 100px; }
+  to {
+    margin: 0px; } }
+
+@-webkit-keyframes p-show {
+  from {
+    color: white; }
+  to {
+    color: #282828; } }
+
+@keyframes p-show {
+  from {
+    color: white; }
+  to {
+    color: #282828; } }
+
+@-webkit-keyframes shadow-show {
+  from {
+    -webkit-box-shadow: 0px 0px 0px 0px #e0e0e0;
+    box-shadow: 0px 0px 0px 0px #e0e0e0; }
+  to {
+    -webkit-box-shadow: -20px -20px 0px 0px #3e1daf;
+    box-shadow: -20px -20px 0px 0px #3e1daf; } }
+
+@keyframes shadow-show {
+  from {
+    -webkit-box-shadow: 0px 0px 0px 0px #e0e0e0;
+    box-shadow: 0px 0px 0px 0px #e0e0e0; }
+  to {
+    -webkit-box-shadow: -20px -20px 0px 0px #3e1daf;
+    box-shadow: -20px -20px 0px 0px #3e1daf; } }
