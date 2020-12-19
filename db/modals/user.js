@@ -83,6 +83,7 @@ UserSchema.methods.toJSON = function(){
 UserSchema.methods.streakInc = async function(){
     let user  = this
     let arr = [10,25,50,75,100];
+    user.streak++;
     if(user.maxstreak==user.streak)
     {
         user.badges.push(String(user.maxstreak));
@@ -102,8 +103,8 @@ UserSchema.methods.streakInc = async function(){
         user.maxstreak = 100000000;
 
     }
-    console.log(user.streak)
-    user.streak++;
+    
+    
     await user.save();
 }
 

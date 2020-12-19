@@ -63,7 +63,7 @@ router.post("/register",async (req,res)=>{
             var user = await User.findOne({email});
             if(user){
                 req.flash('error_message','user already registered with this email');
-                return res.send('/register');
+                return res.redirect('/login');
             }
             var user1 = await User.findOne({username});
             if(user1){
