@@ -11,7 +11,7 @@ const flash = require('connect-flash')
 const mongoose = require('mongoose')
 const {checkAuthenticated,checkLogin} = require('./middlewares/auth');
 const diffDays = require('../methods/days');
-const streak = require('../methods/streak');
+const streakInc = require('../methods/streak');
 
 
 const connection = mongoose.createConnection(process.env.MONGODB_AUTH,{useNewUrlParser:true,useUnifiedTopology:true},(err)=>{
@@ -50,7 +50,7 @@ router.use((req,res,next)=>{
 require('../passport')(passport);
 
 router.post("/register",async (req,res)=>{
-    console.log(req.body)
+    // console.log(req.body)
     var {username,password,email} = req.body;
 
     if(!username || !email || !password)
@@ -108,32 +108,34 @@ router.get('/home',checkAuthenticated,async (req,res)=>{
     
     let days = diffDays(req.user.lastday,new Date());
     
-    if(days==1){
-        req.user.streak = req.user.streak+1;
-        if(req.user.maxstreak<req.user.streak)
-        req.user.maxstreak = req.user.streak;
-        
-    }
-    else if(days>1)req.user.streak =1;
-    req.user.lastday = new Date();
+    
     try{
-        await req.user.save();
+        if(days==1){
+            // req.user.streak = req.user.streak+1;
+            // if(req.user.maxstreak<req.user.streak)
+            // req.user.maxstreak = req.user.streak;
+             req.user.streakInc();
+            }
+            else if(days>1)req.user.streak =1;
+            req.user.lastday = new Date();
+
+        // await req.user.save();
 
         // res.render('home',{name:req.user.name,email:req.user.email,img:req.user.profile,videos:req.user.videos,username:req.user.username,weight:req.user.weight,about:req.user.about});
-        console.log(req.user)
+        // console.log(req.user)
         
     }
     catch(e){
         // res.render('home',{name:req.user.name,email:req.user.email,img:req.user.profile,videos:req.user.videos,username:req.user.username,weight:req.user.weight,about:req.user.about});
         throw new Error(e);
     }
-    if(req.user.maxstreak>=100)
-    req.user.badge='100';
-    else if(req.user.maxstreak>=60)
-    req.user.badge = '60';
-    else if(req.user.maxstreak>=15)
-    req.user.badge = '15';
-    else req.user.badge = '0';
+    // if(req.user.maxstreak>=100)
+    // req.user.badge='100';
+    // else if(req.user.maxstreak>=60)
+    // req.user.badge = '60';
+    // else if(req.user.maxstreak>=15)
+    // req.user.badge = '15';
+    // else req.user.badge = '0';
     res.render('home',req.user);
 })
 

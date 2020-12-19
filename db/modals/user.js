@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 // var GFS = mongoose.model("GFS", new Schema({}, {strict: false}), "fs.files" );
 
-const UserSchema = Schema({
+const UserSchema = new Schema({
     name:{
         type:String,
         
@@ -54,12 +54,15 @@ const UserSchema = Schema({
     },
     maxstreak:{
         type:Number,
-        default:0
+        default:10
     },
     about:{
         type:String,
         default:'College students'
-    }
+    },
+    badges:[{
+        type:String,
+    }]
 })
 
 UserSchema.pre('save',async function(next){
@@ -77,7 +80,32 @@ UserSchema.methods.toJSON = function(){
     delete userObject.password
     return userObject
 }
+UserSchema.methods.streakInc = async function(){
+    let user  = this
+    let arr = [10,25,50,75,100];
+    if(user.maxstreak==user.streak)
+    {
+        user.badges.push(String(user.maxstreak));
+        let maxExit = false
+        for(let i =0;i<arr.length;i++)
+        {
+            if(arr[i]>user.maxstreak)
+            {
+                user.maxstreak = arr[i];
+                maxExit=true;
+                break;
+            }
+        }
+        
+        
+        if(!maxExit)
+        user.maxstreak = 100000000;
 
+    }
+    console.log(user.streak)
+    user.streak++;
+    await user.save();
+}
 
 const User = mongoose.model("user",UserSchema);
 module.exports = User;

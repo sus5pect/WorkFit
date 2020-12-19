@@ -32,7 +32,12 @@
 <h1>maxstreak : <%= maxstreak  %> </h1>
 <a href="/update">Update profile</a>
 <h1>badges</h1>
-<img src="/img/<%= badge %>.jpg" alt="badge">
+<% if(badges && badges.length!=0) {%>
+  <% badges.forEach(badge=>{ %>
+
+    <img src="/img/<%= badge %>.jpg" alt="badge">
+  <% }) %> 
+<% } %>  
 
 <h1>video</h1>
 <% if(typeof videos !='undefined' && videos.length !=0){ %>

@@ -10,7 +10,8 @@ function diffDays(d1, d2)
 
   ndays = (tv2 - tv1) / 1000 / 86400;
   ndays = Math.round(ndays - 0.5);
-  return ndays;
+  // return ndays;
+  return 1;
 }
 // var nDays = diffDays(startDate, endDate);
 // console.log(nDays)

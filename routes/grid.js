@@ -29,7 +29,7 @@ const storage = new GridFsStorage({
     file: (req, file) => {
       return new Promise((resolve, reject) => {
         crypto.randomBytes(16, (err, buf) => {
-            console.log(err,buf)
+            // console.log(err,buf)
           if (err) {
             return reject(err);
           }
@@ -193,13 +193,13 @@ router.post('/profile',async (req,res)=>{
     user = await User.findOne({username:username});
     
     if(user) {
-      if(req.user.maxstreak>=100)
-    user.badge='100';
-    else if(req.user.maxstreak>=60)
-    user.badge = '60';
-    else if(req.user.maxstreak>=15)
-    user.badge = '15';
-    else user.badge = '0';
+    //   if(req.user.maxstreak>=100)
+    // user.badge='100';
+    // else if(req.user.maxstreak>=60)
+    // user.badge = '60';
+    // else if(req.user.maxstreak>=15)
+    // user.badge = '15';
+    // else user.badge = '0';
       user.password=undefined;
       return res.render('home',user);
       }
