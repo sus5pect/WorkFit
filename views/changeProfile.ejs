@@ -1,5 +1,43 @@
+<style>
+.update__container{
+    width: 80%;
+    margin: auto;
+    
+    margin-top: 10rem;
+}
+
+h1{
+    font-family: 'Poppins';
+    font-size: 3rem;
+    text-transform: capitalize;
+    margin-bottom:3rem;
+}
+form{
+    margin-bottom: 5rem;
+    display: flex;
+    flex-direction: column;
+    outline: none;
+    border: none;
+}
+input{
+    width: 30rem;
+    height: 3rem;
+    margin-top: 2rem;
+}
+button{
+    margin-top: 2rem;
+    width: 10rem;
+}
+::placeholder{
+    padding: 0.5rem;
+    text-transform: capitalize;
+}
+</style>
+
+<link rel="stylesheet" href="/css/style.css">
 <%- include('partials/nav.ejs')  %> 
-<h1>upload video</h1>
+<div class="update__container">
+    <h1>upload video</h1>
 <form action="/uploadvideo" method="post" enctype="multipart/form-data">
     <input type="file" name="file" id="file">
     <button>submit</button>
@@ -7,10 +45,11 @@
 
 <h1>Update profile</h1>
 <form action="/update" method="post" enctype="multipart/form-data">
-    <input type="text" name="name" placeholder="name">
-    <input type="text" name="age" placeholder="age">
-    <input type="text" name="weight" placeholder="weight">
-    <input type="text" name="about" placeholder="about">
-    <input type="file" name="file">
+    <input type="text" name="name" placeholder="new name">
+    <input type="text" name="age" placeholder="new age">
+    <input type="text" name="weight" placeholder="new weight">
+    <input type="text" name="about" placeholder=" new about">
+    <input placeholder="profile" type="file" name="new file">
     <button>submit</button>
 </form>
+</div>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/timer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    
+    <title>Timer</title>
+</head>
+<body>
+    <header><h1> LET'S DO SOME EXERCISE</h1></header>
+    <p id="timer">0<span style="font-size: 5rem;">s</span></p>
+    <a onclick="goBack()"><div class="btn">STOP</div> </a>
+    <audio src="./dummy.mp4" autoplay></audio>
+</body>
+<!-- <script src="./javascript/timer.js"></script> -->
+<script>
+    function goBack() {
+      window.history.back();
+    }
+    const time = document.querySelector("#timer");
+    let sec = 0;
+    console.log("test");
+    setInterval(()=>{
+    sec++;
+    time.innerHTML = "<p style='font-size:10rem;'>"+sec+"<span style='font-size:5rem'>s</span></p>";
+    },1000);
+    </script>
+</html>
