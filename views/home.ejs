@@ -87,7 +87,9 @@
                     <li class="navigation__item"><a href="#section-about" class="navigation__link"> About Yoga</a></li>
                     <li class="navigation__item"><a href="/home" class="navigation__link">Home</a></li>
                     <li class="navigation__item"><a href="/explore" class="navigation__link">Explore</a></li>
-                    <li class="navigation__item"><a href="/login" class="navigation__link">  LogIn/Register</a></li>
+                    <li class="navigation__item"><a href="/update" class="navigation__link">  update profile</a></li>
+                    <li class="navigation__item"><a href="/logout" class="navigation__link">  logout</a></li>
+
                     <!-- <li class="navigation__item"><a href="#section-book" class="navigation__link"><span>05</span> book now</a></li>     -->
                 </ul>
             </nav>
@@ -175,7 +177,7 @@
                             <% for(let x=0;x<3 && videos.length!=x ;x++){ %> 
                                 <div class="card border--extsmall margin--small--right">
                                     <div class="card--video">
-                                      <video src="/video/<%=videos[x] %>" controls autoplay></video>
+                                      <video src="/video/<%=videos[x] %>" controls></video>
                                     </div>
                                 </div>
                                 <% } %> 
