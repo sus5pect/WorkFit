@@ -85,9 +85,9 @@
                 </div> -->
                 <ul class="navigation__list">
                     <li class="navigation__item"><a href="#section-about" class="navigation__link"> About Yoga</a></li>
-                    <li class="navigation__item"><a href="#section-features" class="navigation__link">Home</a></li>
-                    <li class="navigation__item"><a href="#section-tours" class="navigation__link">Explore</a></li>
-                    <li class="navigation__item"><a href="#section-stories" class="navigation__link">  LogIn/Register</a></li>
+                    <li class="navigation__item"><a href="/home" class="navigation__link">Home</a></li>
+                    <li class="navigation__item"><a href="/explore" class="navigation__link">Explore</a></li>
+                    <li class="navigation__item"><a href="/login" class="navigation__link">  LogIn/Register</a></li>
                     <!-- <li class="navigation__item"><a href="#section-book" class="navigation__link"><span>05</span> book now</a></li>     -->
                 </ul>
             </nav>
@@ -96,7 +96,9 @@
 
         <header class="header">
             <div class="header__logo-box">
+              
                 <img src="./img/logo.svg" alt="Logo" class="header__logo">
+                
             </div>
         </header>
         
@@ -110,19 +112,30 @@
                     <div class="profile__image margin--small--top border--small ">
                         <!-- A -->
                         <div class="img">
+                          <% if( typeof profile != 'undefined'){ %> 
+                            <img src="/image/<%=profile%> " class="header__logo" alt="profile">
+                            <% }else {%> 
                             <img src="./img/default.jpg" alt="">
+                            <% } %> 
                         </div>
                     </div>
                     <div class="profile__badges margin--small--top border--small ">
                         <!-- B -->
                         <div class="profile__badges--text">
-                            <p>Lorem, ipsum dolor  um dolor  sit amet consectetur adipisicing elit.</p>
+                            <!-- <p>Lorem, ipsum dolor  um dolor  sit amet consectetur adipisicing elit.</p> -->
+                            <p><%= about  %> </p>
                             <div class="profile__badges--show">
-                                <img src="./img/10.svg" alt="">
+                                <!-- <img src="./img/10.svg" alt="">
                                 <img src="./img/25.svg" alt="">
                                 <img src="./img/50.svg" alt="">
                                 <img src="./img/75.svg" alt="">
-                                <img src="./img/100.svg" alt="">
+                                <img src="./img/100.svg" alt=""> -->
+                                <% if(badges && badges.length!=0) {%>
+                                  <% badges.forEach(badge=>{ %>
+                                
+                                    <img src="/img/<%= badge %>.svg" alt="badges">
+                                  <% }) %> 
+                                <% } %>
                             </div>
                         </div>
                     </div>
@@ -132,17 +145,17 @@
                         <!-- C -->
                         <div class="profile__about--text">
                             <h4>@rustam</h4>
-                            <h6> <span>name:</span> subhash chaursia</h6>
-                            <h6> <span>Age:</span> 18</h6>
-                            <h6> <span>Weight:</span> 58</h6>
-                            <h6> <span>Highest streak:</span> 5</h6><h6> <span>Current streak:</span> 2</h6>
-                            <h6> <span>last online:</span> 2 days ago</h6>
+                            <h6> <span>name:</span> <%= name %></h6>
+                            <h6> <span>about:</span> <%= about %></h6>
+                            <h6> <span>Weight:</span> <%= weight  %> </h6>
+                            <h6> <span>Target streak:</span> <%= maxstreak  %> </h6><h6> <span>Current streak:</span><%= streak  %> </h6>
+                            <h6> <span>last online:</span> <%= lastday %></h6>
                         </div>
                     </div>
                     <div class="profile__videos margin--small--top border--small">
                         <!-- D -->
                         <div class="container">
-                            <div class="card border--extsmall margin--small--right">
+                            <!-- <div class="card border--extsmall margin--small--right">
                                 <div class="card--video">
                                     <video src="./../assests/screencast-127.0.0.1_8080-2020.12.19-01_49_12.webm" autoplay muted></video>
                                 </div>
@@ -157,7 +170,15 @@
                                 <div class="card--video">
                                     <video src="./../assests/screencast-127.0.0.1_8080-2020.12.19-01_49_12.webm" autoplay muted></video>
                                 </div>
-                            </div>
+                            </div> -->
+                            
+                            <% for(let x=0;x<3 && videos.length!=x ;x++){ %> 
+                                <div class="card border--extsmall margin--small--right">
+                                    <div class="card--video">
+                                      <video src="/video/<%=videos[x] %>" controls autoplay></video>
+                                    </div>
+                                </div>
+                                <% } %> 
                         </div>
                     </div>
                 </div>  
