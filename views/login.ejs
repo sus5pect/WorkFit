@@ -1,0 +1,15 @@
+<h1>Login</h1>
+<% if(typeof err != "undefined") {%>
+    <h3 style="color:red"><%=err%></h3>
+<%}%>
+<% if(typeof error != "undefined") {%>
+  <h3 style="color:red"><%=error%></h3>
+<%}%>
+<% if(typeof success != "undefined") {%>
+  <h3 style="color:green"><%=success%></h3>
+<%}%>   
+<form action="/login" method="post">
+    <input type="text" name="email" placeholder="email">
+    <input type="password" name="password" placeholder="password">
+    <button>submit</button>
+</form>

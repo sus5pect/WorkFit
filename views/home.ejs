@@ -1,0 +1,42 @@
+<style>
+  img{
+    height:100px;
+    width: 100px;
+  }
+  video{
+    height: 200px;
+    width: 200px;
+  }
+</style>
+<% if(typeof err != "undefined") {%>
+    <h3 style="color:red"><%=err%></h3>
+<%}%>
+<% if(typeof error != "undefined") {%>
+  <h3 style="color:red"><%=error%></h3>
+<%}%>
+<% if(typeof success != "undefined") {%>
+  <h3 style="color:green"><%=success%></h3>
+<%}%>   
+<h1>Welcome</h1>
+<h1><a href="/explore">EXPLORE</a></h1>
+<a href="/logout"><button> Logout</button></a><br>
+
+    <img src="/image/<%=profile%> " alt="profile">
+    <% if(typeof name!='undefined') %> 
+<h1>Name : <%= name %> </h1>
+<h1>Userame : <%= username %> </h1>
+<h1>email : <%= email %> </h1>
+<h1>weight : <%= weight %> </h1>
+<h1>about :<%= about  %> </h1>
+<h1>streak : <%= streak  %> </h1>
+<h1>maxstreak : <%= maxstreak  %> </h1>
+<a href="/update">Update profile</a>
+<h1>badges</h1>
+<img src="/img/<%= badge %>.jpg" alt="badge">
+
+<h1>video</h1>
+<% if(typeof videos !='undefined' && videos.length !=0){ %>
+    <% videos.forEach(video=>{ %>
+      <video src="/video/<%=video  %> " controls></video>
+    <% }) %> 
+  <% } %> 

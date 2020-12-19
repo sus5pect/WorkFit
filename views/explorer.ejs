@@ -1,0 +1,42 @@
+<script>
+    var num = "<%= limit+10 %>";
+    num = parseInt(num);
+    // document.querySelector('#limit').action+=num
+
+</script>
+<style>
+    video{
+        height: 500px;
+        
+    }
+</style>
+<h1>explorer section</h1>
+<h3>search profile of person</h3>
+<form action="/profile" method="POST">
+    <input type="text" name="username">
+    <button>Submit</button>
+</form>
+<hr>
+<h1>explorer section</h1>
+<% if(typeof records != 'undefined') {%>
+    <% records.forEach(record=>{ %>
+        <div class="<%= record.filename  %>">
+        <video src="/video/<%= record.filename %>" controls></video>
+        <p>likes : <span id="b<%= record.filename  %>"><%=record.likes%></span> </p>
+        <button onclick="inc('<%=record.filename%>')">👍</button>
+    </div>
+  <% }) %> 
+
+<% } %> 
+<% if(typeof limit != 'undefined') %> 
+<a href="/explore?limit=<%=limit+5%>">next</a>
+
+<script>
+    function inc(filename){
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET","like/"+filename,false)
+        xhttp.send();
+        let x = document.getElementById('b'+filename);
+        x.innerText = parseInt(x.innerText)+1;
+    }
+</script>
