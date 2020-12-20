@@ -1,5 +1,5 @@
 # WorkFit
-Locally setup instructions
+Locally setup instructions <br>
 #clone this repo
 do ```npm i```
 create .env file with content -
