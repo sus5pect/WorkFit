@@ -1,10 +1,10 @@
 # WorkFit
 Locally setup instructions <br>
-#clone this repo
-do ```npm i```
-create .env file with content -
+# clone this repo <br>
+do ```npm i``` <br>
+create .env file with content -<br>
 ```MONGODB_URL=mongodb://localhost:27017/User
 SECRET=[your-secret-key](anything like abcde) 
 MONGODB_AUTH=mongodb://localhost:27017/login
 
-npm run dev
+Then npm run dev
